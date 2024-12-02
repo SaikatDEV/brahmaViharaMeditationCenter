@@ -1,6 +1,6 @@
 // src/data/imageData.js
 
-const images = import.meta.glob("../images/all/*.{jpg,png,gif,svg}", {
+const images = import.meta.glob("/public/images/all/*.{jpg,png,gif,svg}", {
   eager: true,
 });
 

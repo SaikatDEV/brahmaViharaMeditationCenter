@@ -37,7 +37,7 @@ function AboutUs() {
       <div>
         <img
           className="max-w-[500px] mt-32 opacity-75 hover:opacity-100 hover:scale-105 transition-all duration-500 rounded-3xl"
-          src="/src/images/all/bhante.jpg"
+          src="/public/images/all/bhante.jpg"
           alt="Buddha"
         />
       </div>

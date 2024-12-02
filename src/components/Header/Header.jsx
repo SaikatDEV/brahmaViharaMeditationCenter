@@ -12,7 +12,7 @@ function Header() {
         <div className="header_logo">
           <img
             className="w-20 mt-1 p-1"
-            src="/src/images/all/logo.jpg"
+            src="/public/images/all/logo.jpg"
             alt="logo"
           />
         </div>
