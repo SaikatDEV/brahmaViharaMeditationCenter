@@ -13,7 +13,7 @@ function Header() {
           <img
             className="w-20 mt-1 p-1"
             src="/public/images/all/logo.jpg"
-            alt="logo"
+            alt="LOGO IMAGE"
           />
         </div>
         <div className="header_menu">
