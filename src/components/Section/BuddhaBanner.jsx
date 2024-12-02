@@ -7,8 +7,8 @@ function BuddhaBanner() {
       <div className="h-screen w-full overflow-y-scroll">
         <img
           className="w-full h-[135vh] object-cover object-top"
-          src="/public/images/all/buddha.jpg"
-          alt="Buddha Banner"
+          src="/images/all/buddha.jpg"
+          alt="BUDDHA BANNER IMAGE"
         />
       </div>
 
