@@ -18,7 +18,7 @@ function BuddhaBanner() {
         />
 
         {/* Blurred Edges */}
-        <div className="absolute inset-0 w-full h-full pointer-events-none bg-gradient-to-r from-black via-transparent to-black opacity-75"></div>
+        <div className="absolute inset-0 w-full h-full pointer-events-none bg-gradient-to-r from-black via-transparent to-black opacity-80"></div>
 
         {/* Title Section */}
         <div className="absolute inset-0 flex items-center justify-center z-10 animate-titleFadeIn px-4">
