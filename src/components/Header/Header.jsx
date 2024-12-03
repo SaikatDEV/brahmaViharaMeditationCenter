@@ -11,7 +11,7 @@ function Header() {
       <div className="header_container flex items-center justify-between">
         <div className="header_logo">
           <img
-            className="w-20 mt-1 p-1"
+            className="w-20 mt-1 p-2"
             src="/images/all/logo.jpg"
             alt="LOGO IMAGE"
           />
