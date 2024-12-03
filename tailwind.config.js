@@ -15,17 +15,17 @@ export default {
       },
       keyframes: {
         fadeIn: {
-          "75%": { opacity: "0" },
+          "0%": { opacity: "0" },
           "100%": { opacity: "1" },
         },
         titleFadeIn: {
           "0%": {
             opacity: "0",
-            transform: "translateY(25%)", // Start slightly below the center
+            transform: "translateY(20%)", // Start slightly below
           },
           "100%": {
             opacity: "1",
-            transform: "translateY(15%)", // End at slightly above the center
+            transform: "translateY(10%)", // End at the original position
           },
         },
       },

@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { FaFacebookF, FaYoutube, FaEnvelope } from "react-icons/fa"; // Importing icons from react-icons
 
 function Header() {
   const [dropdownVisible, setDropdownVisible] = useState(false);
@@ -11,12 +12,37 @@ function Header() {
     <header className="fixed w-full px-4 sm:px-8 h-20 z-30 bg-gray-700 shadow-md">
       <div className="flex items-center justify-between h-full">
         {/* Logo Section */}
-        <div className="header_logo">
+        <div className="flex items-center">
           <img
             className="w-16 sm:w-20 mt-1"
             src="/images/all/logo.png"
             alt="LOGO IMAGE"
           />
+          {/* Social Media Icons */}
+          <div className="flex items-center space-x-4 ml-4 text-white">
+            <a
+              href="https://www.facebook.com/groups/316334985782218"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="hover:text-blue-500"
+            >
+              <FaFacebookF size={25} />
+            </a>
+            <a
+              href="https://www.youtube.com/@VenSaccananda"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="hover:text-red-500"
+            >
+              <FaYoutube size={25} />
+            </a>
+            <a
+              href="mailto:bvmcnewyork@gmail.com"
+              className="hover:text-orange-500"
+            >
+              <FaEnvelope size={25} />
+            </a>
+          </div>
         </div>
 
         {/* Hamburger Menu for Mobile */}

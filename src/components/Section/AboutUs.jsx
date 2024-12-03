@@ -1,6 +1,34 @@
-import React from "react";
+import React, { useEffect, useState, useRef } from "react";
 
 function AboutUs() {
+  const [isVisible, setIsVisible] = useState(false);
+  const titleRef = useRef(null);
+
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting) {
+          setIsVisible(true); // Trigger the animation
+        } else {
+          setIsVisible(false); // Remove animation when out of view
+        }
+      },
+      {
+        threshold: 0.5, // Trigger when 50% of the element is visible
+      }
+    );
+
+    if (titleRef.current) {
+      observer.observe(titleRef.current);
+    }
+
+    return () => {
+      if (titleRef.current) {
+        observer.unobserve(titleRef.current);
+      }
+    };
+  }, []);
+
   return (
     <div
       id="aboutUs"
@@ -8,10 +36,15 @@ function AboutUs() {
     >
       {/* Text Section */}
       <div className="w-full lg:w-1/2 mr-0 lg:mr-8 mt-10 lg:mt-20">
-        <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-left pt-4 lg:pt-10">
+        <h2
+          ref={titleRef}
+          className={`text-3xl sm:text-4xl lg:text-5xl font-bold text-left pt-4 lg:pt-10 transition-all duration-1000 ${
+            isVisible ? "animate-titleFadeIn" : "opacity-0"
+          }`}
+        >
           About Us
         </h2>
-        <p className="mt-4 sm:mt-6 lg:mt-8 text-sm sm:text-base lg:text-xl leading-relaxed">
+        <p className="mt-6 sm:mt-6 lg:mt-16 text-sm sm:text-base lg:text-xl leading-relaxed">
           Welcome to your spiritual sanctuary at Brahma Vihara Meditation
           Center. Here, you’re not just stepping into a meditation center;
           you’re beginning a transformative journey towards lasting inner peace
