@@ -17,30 +17,31 @@ export default function VideoPlayer() {
   };
 
   return (
-    <div className="p-6 bg-gray-400 h-[900px]">
-      <h2 className="mt-20 text-3xl font-bold mb-6 text-center">
+    <div className="p-6 bg-gray-300 h-auto min-h-[900px]">
+      <h2 className="mt-12 text-5xl font-bold text-center text-gray-800 mb-8">
         Watch Videos
       </h2>
 
       {/* Video Groups Selector */}
-      <div className="flex justify-center mb-6">
+      <div className="flex justify-center mb-8">
         {videoGroups.map((group) => (
           <button
             key={group.id}
             onClick={() => handleGroupChange(group.id)}
-            className={`px-4 py-2 mx-2 rounded ${
+            className={`px-4 py-2 mx-2 rounded-lg shadow-sm transition-all duration-300 ${
               selectedGroup.id === group.id
-                ? "bg-blue-600 text-white"
-                : "bg-gray-300 hover:bg-gray-400"
+                ? "bg-blue-600 text-white font-semibold"
+                : "bg-gray-200 hover:bg-gray-300"
             }`}
           >
             {group.name}
           </button>
         ))}
       </div>
-      <div className="flex items-center justify-center flex-col md:flex-row md:space-x-6">
+
+      <div className="flex items-center justify-center flex-col md:flex-row md:space-x-8">
         {/* Video Player */}
-        <div className="mb-6 p-8 rounded-lg overflow-hidden flex items-center justify-center">
+        <div className="mb-6 md:mb-0 p-6 rounded-lg overflow-hidden flex items-center justify-center shadow-md bg-white">
           <YouTube
             videoId={currentVideo.youtubeId}
             opts={{
@@ -56,16 +57,18 @@ export default function VideoPlayer() {
         </div>
 
         {/* Video List */}
-        <div className="bg-white p-4 rounded-lg shadow-lg ">
-          <h3 className="text-xl font-bold mb-4">{selectedGroup.name}</h3>
-          <ul>
+        <div className="bg-white p-6 rounded-lg shadow-md max-w-[400px] w-full">
+          <h3 className="text-lg font-semibold mb-4 text-gray-800">
+            {selectedGroup.name}
+          </h3>
+          <ul className="divide-y divide-gray-200">
             {selectedGroup.videos.map((video) => (
               <li
                 key={video.id}
-                className={`p-2 mb-2 cursor-pointer rounded ${
+                className={`p-3 cursor-pointer rounded transition-all duration-200 ${
                   currentVideo.id === video.id
-                    ? "bg-blue-200 font-bold"
-                    : "hover:bg-gray-200"
+                    ? "bg-blue-100 text-blue-800 font-semibold"
+                    : "hover:bg-gray-100"
                 }`}
                 onClick={() => handleVideoChange(video)}
               >

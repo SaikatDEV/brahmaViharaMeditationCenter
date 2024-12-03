@@ -2,12 +2,14 @@ import React from "react";
 
 function DonateOnline() {
   return (
-    <div className="p- bg-gray-100 h-[850px] flex justify-center items-center">
-      <div className="bg-white shadow-lg rounded-lg p-6 w-full max-w-lg">
-        <h2 className="text-2xl font-bold text-center mb-6">Donation</h2>
-        <p className="text-center text-gray-600 mb-4">
-          We appreciate your generosity. You can donate using one of the
-          following options:
+    <div className="p-6 bg-gray-100 h-auto min-h-[850px] flex justify-center items-center">
+      <div className="bg-white shadow-xl rounded-lg p-6 w-full max-w-lg">
+        <h2 className="text-3xl font-bold text-center text-gray-800 mb-6">
+          Donate Online
+        </h2>
+        <p className="text-center text-gray-600 mb-8">
+          Your generosity helps us continue our mission. Please donate using one
+          of the following methods:
         </p>
 
         {/* Zelle Information */}
@@ -16,7 +18,7 @@ function DonateOnline() {
           <p className="text-gray-700">
             Send your donation via Zelle to the following email address:
           </p>
-          <p className="font-semibold text-gray-900 mt-1">zelle@example.com</p>
+          <p className="font-semibold text-gray-900 mt-2">zelle@example.com</p>
         </div>
 
         {/* Bank Check Information */}
@@ -27,7 +29,7 @@ function DonateOnline() {
           <p className="text-gray-700">
             Mail your check to the following address:
           </p>
-          <p className="font-semibold text-gray-900 mt-1">
+          <p className="font-semibold text-gray-900 mt-2">
             Brahma Vihara Meditation Center
             <br />
             123 Meditation Way
@@ -42,13 +44,12 @@ function DonateOnline() {
           <p className="text-gray-700">
             For more information about the donation process, please call us at:
           </p>
-          <p className="font-semibold text-gray-900 mt-1">+1 (555) 123-4567</p>
+          <p className="font-semibold text-gray-900 mt-2">+1 (555) 123-4567</p>
         </div>
 
         {/* Thank You Note */}
-        <p className="text-center text-sm text-gray-500 mt-6">
-          Thank you for your support. Your generosity helps us continue our
-          mission.
+        <p className="text-center text-sm text-gray-500 mt-8">
+          Thank you for your support. Your kindness makes a difference.
         </p>
       </div>
     </div>

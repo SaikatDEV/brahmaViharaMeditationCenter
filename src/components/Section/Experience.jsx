@@ -23,13 +23,13 @@ export default function Experience() {
   };
 
   return (
-    <div className="bg-gray-200 py-16">
-      <h2 className="mt-12 text-4xl font-bold text-center pb-8">
+    <div className="bg-gray-500 py-16 px-4 sm:px-8">
+      <h2 className="mt-12 text-3xl sm:text-4xl font-bold text-center pb-8">
         The Experience
       </h2>
 
       {/* Card Container */}
-      <div className="bg-white rounded-lg shadow-lg mx-auto w-[700px] h-[700px] flex items-center justify-center">
+      <div className="bg-white rounded-lg shadow-lg mx-auto w-full max-w-[90%] sm:max-w-[700px] h-[500px] sm:h-[700px] flex items-center justify-center">
         {/* Swiper */}
         <Swiper
           spaceBetween={30}
@@ -44,7 +44,7 @@ export default function Experience() {
           navigation={true}
           modules={[Autoplay, Pagination, Navigation]}
           onAutoplayTimeLeft={onAutoplayTimeLeft}
-          className="w-[650px] h-[650px] rounded-lg overflow-hidden"
+          className="w-full h-full rounded-lg overflow-hidden"
         >
           {/* Dynamically Render SwiperSlide */}
           {imageData.map((image) => (
