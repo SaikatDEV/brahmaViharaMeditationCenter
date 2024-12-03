@@ -48,7 +48,7 @@ export default function VideoPlayer() {
               height: "390",
               width: "640",
               playerVars: {
-                autoplay: 1, // Auto-play the video
+                autoplay: 0, // Turn off auto-play
                 controls: 1, // Show player controls
               },
             }}
