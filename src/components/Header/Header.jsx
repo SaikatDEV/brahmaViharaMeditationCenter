@@ -7,7 +7,7 @@ function Header() {
     setDropdownVisible(!dropdownVisible);
   };
   return (
-    <header className="header bg-white fixed w-full px-8 h-30 z-10">
+    <header className="header fixed w-full px-8 h-30 z-30 bg-white">
       <div className="header_container flex items-center justify-between">
         <div className="header_logo">
           <img

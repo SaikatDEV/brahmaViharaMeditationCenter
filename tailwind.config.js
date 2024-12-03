@@ -21,11 +21,11 @@ export default {
         titleFadeIn: {
           "0%": {
             opacity: "0",
-            transform: "translateY(-25%)", // Start slightly below the center
+            transform: "translateY(25%)", // Start slightly below the center
           },
           "100%": {
             opacity: "1",
-            transform: "translateY(-35%)", // End at slightly above the center
+            transform: "translateY(15%)", // End at slightly above the center
           },
         },
       },
