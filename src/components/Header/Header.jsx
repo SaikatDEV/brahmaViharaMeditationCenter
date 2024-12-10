@@ -1,7 +1,8 @@
 import React, { useState } from "react";
-import { FaFacebookF, FaYoutube, FaEnvelope } from "react-icons/fa"; // Importing icons from react-icons
+import { Link } from "react-router-dom";
+import { FaFacebookF, FaYoutube, FaEnvelope, FaUser } from "react-icons/fa"; // Importing icons
 
-function Header() {
+function Header({ onAdminLogin, isAdminLoggedIn }) {
   const [dropdownVisible, setDropdownVisible] = useState(false);
 
   const toggleDropdown = () => {
@@ -23,6 +24,8 @@ function Header() {
             <a
               href="https://www.facebook.com/groups/316334985782218"
               target="_blank"
+              // This below is needed for security purposes
+              // while we add any external website
               rel="noopener noreferrer"
               className="hover:text-blue-500"
             >
@@ -31,6 +34,8 @@ function Header() {
             <a
               href="https://www.youtube.com/@VenSaccananda"
               target="_blank"
+              // This below is needed for security purposes
+              // while we add any external website
               rel="noopener noreferrer"
               className="hover:text-red-500"
             >
@@ -73,46 +78,65 @@ function Header() {
         </div>
 
         {/* Desktop Menu */}
-        <div className="hidden sm:block text-white">
-          <ul className="flex items-center space-x-8 font-semibold text-xl font-roboto">
+        <div className="hidden sm:flex items-center">
+          <ul className="flex items-center space-x-8 text-white font-semibold text-lg">
             <li>
-              <a href="#home" className="hover:text-orange-500">
+              <Link to="/" className="hover:text-orange-500">
                 Home
-              </a>
+              </Link>
             </li>
             <li>
-              <a href="#aboutUs" className="hover:text-orange-500">
+              <Link to="/about" className="hover:text-orange-500">
                 About Us
-              </a>
+              </Link>
             </li>
             <li>
-              <a href="#teachings" className="hover:text-orange-500">
+              <Link to="/teachings" className="hover:text-orange-500">
                 Teachings
-              </a>
+              </Link>
             </li>
             <li>
-              <a href="#ordination" className="hover:text-orange-500">
+              <Link tp="/ordination" className="hover:text-orange-500">
                 Ordination
-              </a>
+              </Link>
             </li>
             <li>
-              <a href="#donation" className="hover:text-orange-500">
+              <Link to="/donation" className="hover:text-orange-500">
                 Donation
-              </a>
+              </Link>
             </li>
+            {isAdminLoggedIn && (
+              <li>
+                <Link
+                  to="/createpost"
+                  onClick={() => setDropdownVisible(false)}
+                  className="hover:text-green-500"
+                >
+                  Create Post
+                </Link>
+              </li>
+            )}
+
             <li>
-              <a href="#contact" className="hover:text-orange-500">
+              <Link to="/contact" className="hover:text-orange-500">
                 Contact
-              </a>
+              </Link>
             </li>
           </ul>
+          {/* Admin Login Icon */}
+          <button
+            onClick={onAdminLogin}
+            className="ml-6 text-white hover:text-orange-500 focus:outline-none"
+          >
+            <FaUser size={25} />
+          </button>
         </div>
       </div>
 
       {/* Mobile Dropdown Menu */}
       {dropdownVisible && (
         <div className="sm:hidden absolute top-20 left-0 w-full bg-white shadow-md">
-          <ul className="flex flex-col items-center space-y-4 py-4 font-semibold text-lg font-roboto">
+          <ul className="flex flex-col items-center space-y-4 py-4 font-semibold text-lg text-gray-800">
             <li>
               <a
                 href="#home"
