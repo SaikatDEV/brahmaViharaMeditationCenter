@@ -110,24 +110,25 @@ const Viharas = () => {
               <p className="text-gray-700">{selectedVihara.address}</p>
             </div>
 
-            {/* Website Thumbnail */}
+            {/* Website Section */}
             <div className="flex justify-center">
               <a
                 href={selectedVihara.website}
                 target="_blank"
                 rel="noopener noreferrer"
+                className="block w-full max-w-lg border rounded-lg overflow-hidden"
               >
-                <img
-                  src={`https://screenshotlayer.com/api/capture?access_key=your_api_key&url=${selectedVihara.website}`}
-                  alt={`${selectedVihara.name} thumbnail`}
-                  className="w-full max-w-md border rounded-lg shadow-lg"
-                />
+                <iframe
+                  src={selectedVihara.website}
+                  title={`${selectedVihara.name} Website`}
+                  className="w-full h-96"
+                ></iframe>
               </a>
             </div>
 
             {/* Note */}
             <p className="text-sm text-gray-500 text-center">
-              Click the thumbnail to visit the website.
+              Click the website preview to open in a new tab.
             </p>
           </div>
         ) : (
