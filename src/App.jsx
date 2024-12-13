@@ -2,12 +2,12 @@ import React, { useState } from "react";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 
 // Components
+import Home from "./components/Section/Home";
 import Header from "./components/Header/Header";
 import AboutUs from "./components/Section/AboutUs";
-import Experience from "./components/Section/Experience";
-import BuddhaBanner from "./components/Section/BuddhaBanner";
+import Tripitaka from "./components/Section/Tripitaka";
+import Viharas from "./components/Section/Viharas";
 import Footer from "./components/Footer/footer";
-import VideoPlayer from "./components/Section/VideoPlayer";
 import DonateOnline from "./components/Footer/DonateOnline";
 import AdminLogin from "./components/Header/AdminLogin";
 import CreatePost from "./components/Posts/CreatePost";
@@ -51,10 +51,10 @@ function App() {
 
         {/* Routes */}
         <Routes>
-          <Route path="/" element={<BuddhaBanner />} />
+          <Route path="/" element={<Home />} />
           <Route path="/about" element={<AboutUs />} />
-          <Route path="/experience" element={<Experience />} />
-          <Route path="/videos" element={<VideoPlayer />} />
+          <Route path="/tripitaka" element={<Tripitaka />} />
+          <Route path="/viharas" element={<Viharas />} />
           <Route path="/donate" element={<DonateOnline />} />
           <Route path="/createpost" element={<CreatePost />} />
           {/* Optional: 404 Not Found Page */}

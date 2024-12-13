@@ -7,7 +7,10 @@ function AdminLogin({ onLoginSuccess, onClose, isAdminLoggedIn, onLogout }) {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    if (username === "admin" && password === "password123") {
+    if (
+      username === import.meta.env.VITE_USER_NAME &&
+      password === import.meta.env.VITE_PASSWORD
+    ) {
       onLoginSuccess();
     } else {
       setError("Invalid credentials. Please try again with valid credentials.");

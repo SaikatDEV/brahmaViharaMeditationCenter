@@ -14,11 +14,17 @@ function Header({ onAdminLogin, isAdminLoggedIn }) {
       <div className="flex items-center justify-between h-full">
         {/* Logo Section */}
         <div className="flex items-center">
-          <img
-            className="w-16 sm:w-20 mt-1"
-            src="/images/all/logo.png"
-            alt="LOGO IMAGE"
-          />
+          <div>
+            <div className="h-8 w-8 sm:h-10 sm:w-10 border-4 border-red-600 rounded-full absolute top-1 inset-[44px] animate-pulse">
+              <div className="absolute h-6 w-6 sm:h-8 sm:w-8 border-4 border-yellow-400 rounded-full animate-pulse"></div>
+            </div>
+
+            <img
+              className="w-16 sm:w-20 mt-1 relative -ml-1 p-2"
+              src="/images/all/logo.png"
+              alt="LOGO IMAGE"
+            />
+          </div>
           {/* Social Media Icons */}
           <div className="flex items-center space-x-4 ml-4 text-white">
             <a
@@ -91,18 +97,18 @@ function Header({ onAdminLogin, isAdminLoggedIn }) {
               </Link>
             </li>
             <li>
-              <Link to="/teachings" className="hover:text-orange-500">
-                Teachings
+              <Link to="/tripitaka" className="hover:text-orange-500">
+                Tripitaka
               </Link>
             </li>
             <li>
-              <Link tp="/ordination" className="hover:text-orange-500">
-                Ordination
+              <Link to="/viharas" className="hover:text-orange-500">
+                Viharas
               </Link>
             </li>
             <li>
               <Link to="/donation" className="hover:text-orange-500">
-                Donation
+                Articles
               </Link>
             </li>
             {isAdminLoggedIn && (
