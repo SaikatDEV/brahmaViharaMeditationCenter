@@ -124,8 +124,8 @@ function Header({ onAdminLogin, isAdminLoggedIn }) {
             )}
 
             <li>
-              <Link to="/contact" className="hover:text-orange-500">
-                Contact
+              <Link to="/buddhism" className="hover:text-orange-500">
+                Buddhism
               </Link>
             </li>
           </ul>
