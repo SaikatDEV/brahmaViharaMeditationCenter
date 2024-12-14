@@ -6,27 +6,27 @@ const Tripitaka = () => {
     {
       id: 1,
       title: "দীর্ঘ নিকায় ১",
-      url: "/public/pdf/দীর্ঘ-নিকায়১.pdf",
+      url: "/public/pdf/1.pdf",
     },
     {
       id: 2,
       title: "দীর্ঘ নিকায় ২",
-      url: "/public/pdf/দীর্ঘ-নিকায়২.pdf",
+      url: "/public/pdf/2.pdf",
     },
     {
       id: 3,
       title: "দীর্ঘ নিকায় ৩",
-      url: "/public/pdf/দীর্ঘ-নিকায়৩.pdf",
+      url: "/public/pdf/3.pdf",
     },
     {
       id: 4,
       title: "মধ্যম নিকায় ১",
-      url: "/public/pdf/মধ্যম-নিকায়১.pdf",
+      url: "/public/pdf/4.pdf",
     },
     {
       id: 5,
       title: "মধ্যম-নিকায় ২",
-      url: "/public/pdf/মধ্যম-নিকায়২.pdf",
+      url: "/public/pdf/5.pdf",
     },
   ];
 
