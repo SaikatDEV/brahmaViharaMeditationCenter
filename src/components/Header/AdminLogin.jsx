@@ -38,7 +38,7 @@ function AdminLogin({ onLoginSuccess, onClose, isAdminLoggedIn, onLogout }) {
         </button>
         {!isAdminLoggedIn ? (
           <>
-            <h2 className="text-2xl font-bold mb-4">BVMC Admin Login</h2>
+            <h2 className="text-2xl font-bold mb-4">Admin Login</h2>
             {error && <p className="text-red-500 mb-4">{error}</p>}
             <form onSubmit={handleSubmit}>
               <div className="mb-4">

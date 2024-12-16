@@ -90,9 +90,9 @@ function AboutUs() {
       </div>
 
       {/* Image Section */}
-      <div className="w-full lg:w-1/2 flex justify-center">
+      <div className="w-full lg:w-1/2 flex justify-center mt-32 sm:mt-60">
         <img
-          className="max-w-[300px] sm:max-w-[400px] lg:max-w-[500px] lg:max-h-[500px] sm:mt-10 lg:mt-32 opacity-75 hover:opacity-100 hover:scale-105 transition-all duration-500 rounded-3xl"
+          className="max-w-[300px] sm:max-w-[400px] lg:max-w-[500px] lg:max-h-[500px] opacity-75 hover:opacity-100 hover:scale-105 transition-all duration-500 rounded-3xl"
           src="/images/all/author.jpg"
           alt="AUTHOR IMAGE"
         />

@@ -1,35 +1,7 @@
 import React, { useState } from "react";
+import pdfs from "../../data/tripitakaPdf";
 
 const Tripitaka = () => {
-  // Mock data for PDFs
-  const pdfs = [
-    {
-      id: 1,
-      title: "দীর্ঘ নিকায় ১",
-      url: "/pdf/dn1.pdf",
-    },
-    {
-      id: 2,
-      title: "দীর্ঘ নিকায় ২",
-      url: "/pdf/dn2.pdf",
-    },
-    {
-      id: 3,
-      title: "দীর্ঘ নিকায় ৩",
-      url: "/pdf/dn3.pdf",
-    },
-    {
-      id: 4,
-      title: "মধ্যম নিকায় ১",
-      url: "/pdf/mn4.pdf",
-    },
-    {
-      id: 5,
-      title: "মধ্যম-নিকায় ২",
-      url: "/pdf/mn5.pdf",
-    },
-  ];
-
   // State for selected PDF
   const [selectedPdf, setSelectedPdf] = useState(pdfs[0].url);
 

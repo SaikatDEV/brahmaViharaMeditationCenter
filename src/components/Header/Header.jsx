@@ -14,17 +14,19 @@ function Header({ onAdminLogin, isAdminLoggedIn }) {
       <div className="flex items-center justify-between h-full">
         {/* Logo Section */}
         <div className="flex items-center">
-          <div>
-            <div className="h-8 w-8 sm:h-10 sm:w-10 border-4 border-red-600 rounded-full absolute top-1 inset-[44px] animate-pulse">
-              <div className="absolute h-6 w-6 sm:h-8 sm:w-8 border-4 border-yellow-400 rounded-full animate-pulse"></div>
-            </div>
+          <Link to="/">
+            <div>
+              <div className="h-8 w-8 sm:h-10 sm:w-10 border-4 border-red-600 rounded-full absolute top-1 inset-[44px] animate-pulse">
+                <div className="absolute h-6 w-6 sm:h-8 sm:w-8 border-4 border-yellow-400 rounded-full animate-pulse"></div>
+              </div>
 
-            <img
-              className="w-16 sm:w-20 mt-1 relative -ml-1 p-2"
-              src="/images/all/logo.png"
-              alt="LOGO IMAGE"
-            />
-          </div>
+              <img
+                className="w-16 sm:w-20 mt-1 relative -ml-1 p-2"
+                src="/images/all/logo.png"
+                alt="LOGO IMAGE"
+              />
+            </div>
+          </Link>
           {/* Social Media Icons */}
           <div className="flex items-center space-x-4 ml-4 text-white">
             <a
@@ -91,9 +93,15 @@ function Header({ onAdminLogin, isAdminLoggedIn }) {
                 Home
               </Link>
             </li>
+
             <li>
               <Link to="/about" className="hover:text-orange-500">
                 About Us
+              </Link>
+            </li>
+            <li>
+              <Link to="/buddhism" className="hover:text-orange-500">
+                Buddhism
               </Link>
             </li>
             <li>
@@ -106,11 +114,7 @@ function Header({ onAdminLogin, isAdminLoggedIn }) {
                 Viharas
               </Link>
             </li>
-            <li>
-              <Link to="/donation" className="hover:text-orange-500">
-                Articles
-              </Link>
-            </li>
+
             {isAdminLoggedIn && (
               <li>
                 <Link
@@ -122,12 +126,6 @@ function Header({ onAdminLogin, isAdminLoggedIn }) {
                 </Link>
               </li>
             )}
-
-            <li>
-              <Link to="/buddhism" className="hover:text-orange-500">
-                Buddhism
-              </Link>
-            </li>
           </ul>
           {/* Admin Login Icon */}
           <button
@@ -162,40 +160,31 @@ function Header({ onAdminLogin, isAdminLoggedIn }) {
               </a>
             </li>
             <li>
-              <a
-                href="#teachings"
+              <Link
+                to="/buddhism"
                 onClick={() => setDropdownVisible(false)}
                 className="hover:text-orange-500"
               >
-                Teachings
-              </a>
+                Buddhism
+              </Link>
             </li>
             <li>
-              <a
-                href="#ordination"
+              <Link
+                to="/tripitaka"
                 onClick={() => setDropdownVisible(false)}
                 className="hover:text-orange-500"
               >
-                Ordination
-              </a>
+                Tripitaka
+              </Link>
             </li>
             <li>
-              <a
-                href="#donation"
+              <Link
+                to="/viharas"
                 onClick={() => setDropdownVisible(false)}
                 className="hover:text-orange-500"
               >
-                Donation
-              </a>
-            </li>
-            <li>
-              <a
-                href="#contact"
-                onClick={() => setDropdownVisible(false)}
-                className="hover:text-orange-500"
-              >
-                Contact
-              </a>
+                Vihara
+              </Link>
             </li>
           </ul>
         </div>

@@ -1,54 +1,29 @@
 import React, { useState } from "react";
+import viharasBd from "../../data/viharaListBd";
+import viharasUsa from "../../data/viharaListUsa";
 
 const Viharas = () => {
-  // Mock data for Viharas
-  const viharas = [
-    {
-      id: 1,
-      name: "Dhammakaya International Meditation Center",
-      country: "USA",
-      address: "865 E Monrovia Pl, Azusa, CA 91702, USA",
-      website: "https://www.dhammakaya.net/",
-    },
-    {
-      id: 2,
-      name: "Los Angeles Buddhist Vihara",
-      country: "USA",
-      address: "9205 Columbus Ave, North Hills, CA 91343, USA",
-      website: "http://www.labuddhistvihara.org/",
-    },
-    {
-      id: 3,
-      name: "Dharmarajika Buddhist Monastery",
-      country: "Bangladesh",
-      address: "Bashabo, Dhaka, Bangladesh",
-      website: "https://www.dharmarajika.org/",
-    },
-    {
-      id: 4,
-      name: "Chittagong Buddhist Vihara",
-      country: "Bangladesh",
-      address: "Chittagong, Bangladesh",
-      website: "https://chittagongvihara.org/",
-    },
-  ];
-
   // State for selected country
   const [selectedCountry, setSelectedCountry] = useState("USA");
 
-  // Filtered Viharas based on selected country
-  const filteredViharas = viharas.filter(
-    (vihara) => vihara.country === selectedCountry
-  );
-
-  // State for selected Vihara
-  const [selectedVihara, setSelectedVihara] = useState(filteredViharas[0]);
+  // State for filtered viharas and selected vihara
+  const [filteredViharas, setFilteredViharas] = useState(viharasUsa);
+  const [selectedVihara, setSelectedVihara] = useState(viharasUsa[0]);
 
   // Handle country toggle
   const handleToggle = (country) => {
     setSelectedCountry(country);
-    const firstVihara = viharas.find((vihara) => vihara.country === country);
-    setSelectedVihara(firstVihara); // Automatically select the first Vihara of the selected country
+
+    const newFilteredViharas = country === "USA" ? viharasUsa : viharasBd;
+
+    // Sort by name before setting the filtered Viharas
+    const sortedViharas = [...newFilteredViharas].sort((a, b) =>
+      a.name.localeCompare(b.name)
+    );
+
+    setFilteredViharas(sortedViharas);
+    // Automatically select the first vihara
+    setSelectedVihara(sortedViharas[0]);
   };
 
   return (
@@ -84,7 +59,7 @@ const Viharas = () => {
           {selectedCountry} Buddhist Viharas
         </h2>
         <ul className="space-y-2">
-          {filteredViharas.map((vihara) => (
+          {filteredViharas.map((vihara, index) => (
             <li
               key={vihara.id}
               className={`p-2 cursor-pointer rounded ${
@@ -94,7 +69,7 @@ const Viharas = () => {
               }`}
               onClick={() => setSelectedVihara(vihara)}
             >
-              {vihara.name}
+              {`${index + 1} ➡ ${vihara.name}`}
             </li>
           ))}
         </ul>
@@ -106,22 +81,29 @@ const Viharas = () => {
           <div className="space-y-4">
             {/* Address Section */}
             <div>
-              <h3 className="text-xl font-bold mb-2">{selectedVihara.name}</h3>
+              <a
+                href={selectedVihara.website}
+                rel="noopener noreferrer"
+                target="_blank"
+                className="text-xl font-bold mb-2 cursor-pointer hover:text-blue-500"
+              >
+                {selectedVihara.name}
+              </a>
               <p className="text-gray-700">{selectedVihara.address}</p>
             </div>
 
-            {/* Website Section */}
+            {/* Enlarged Website Section */}
             <div className="flex justify-center">
               <a
                 href={selectedVihara.website}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="block w-full max-w-lg border rounded-lg overflow-hidden"
+                className="block w-full border rounded-lg overflow-hidden"
               >
                 <iframe
                   src={selectedVihara.website}
                   title={`${selectedVihara.name} Website`}
-                  className="w-full h-96"
+                  className="w-full h-[80vh] border"
                 ></iframe>
               </a>
             </div>
