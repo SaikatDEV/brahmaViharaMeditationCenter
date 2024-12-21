@@ -10,11 +10,12 @@
     "preview": "vite preview"
   },
   "dependencies": {
-    "@emotion/react": "^11.13.5",
-    "@emotion/styled": "^11.13.5",
+    "react-material-ui-carousel": "^3.3.2",
+    "@emotion/react": "^11.14.0",
+    "@emotion/styled": "^11.14.0",
     "@fontsource/lobster": "^5.1.0",
     "@fontsource/roboto": "^5.1.0",
-    "@mui/material": "^6.1.9",
+    "@mui/material": "^6.2.1",
     "body-parser": "^1.20.3",
     "express": "^4.21.2",
     "multer": "^1.4.5-lts.1",

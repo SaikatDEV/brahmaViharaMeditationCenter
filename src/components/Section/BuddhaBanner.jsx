@@ -1,4 +1,6 @@
 import React, { useEffect } from "react";
+import buddhaPhrase from "../../data/buddhaPhrase.js";
+import Carousel from "react-material-ui-carousel";
 
 function BuddhaBanner() {
   useEffect(() => {
@@ -41,11 +43,18 @@ function BuddhaBanner() {
       </div>
 
       {/* Quote Section */}
-      <div className="bg-orange-800 text-white text-center py-8 sm:py-10 text-sm sm:text-xl md:text-3xl font-extralight px-4">
-        <p>
-          "Unlock inner peace and wisdom through the teachings of Buddhism and
-          the transformative power of meditation!"
-        </p>
+      <div className="bg-orange-800 text-white text-center py-8 sm:py-8 text-sm sm:text-xl md:text-3xl font-extralight px-4">
+        <Carousel
+          indicators={false}
+          animation="fade"
+          autoPlay={true}
+          navButtonsAlwaysInvisible={true}
+          duration={1000}
+        >
+          {buddhaPhrase?.map((each, index) => (
+            <div key={index}>{each}</div>
+          ))}
+        </Carousel>
       </div>
     </div>
   );

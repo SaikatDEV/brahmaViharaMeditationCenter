@@ -5,6 +5,11 @@ function AboutUs() {
   const titleRef = useRef(null);
 
   useEffect(() => {
+    // Scroll to the top of the page when this component is rendered
+    window.scrollTo({ top: 0, behavior: "smooth" });
+  }, []);
+
+  useEffect(() => {
     const observer = new IntersectionObserver(
       ([entry]) => {
         if (entry.isIntersecting) {

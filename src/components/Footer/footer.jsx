@@ -2,8 +2,8 @@ import React from "react";
 
 export default function Footer() {
   return (
-    <footer className="bg-gray-800 text-gray-300 py-10">
-      <div className="container mx-auto px-6 lg:px-20">
+    <footer className="bg-gray-800 text-gray-300 pt-6">
+      <section className="container mx-auto px-6 lg:px-20">
         {/* Grid Container */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
           {/* Resources Section */}
@@ -75,20 +75,15 @@ export default function Footer() {
             <p className="text-gray-400">All Rights Reserved</p>
           </div>
         </div>
-      </div>
-      <div className="text-right text-gray-500 mt-4 pr-8">
+      </section>
+      <section className=" text-white mt-8 bg-slate-600 flex items-center justify-end space-x-10 py-2 pr-10">
         <p className="text-sm">
-          Designed by <span className="font-semibold">Saikat Barua</span>
-          <br />
-          <a
-            className="underline"
-            href="http://saikatbarua.com"
-            target="_blank"
-          >
-            https://saikatbarua.com
-          </a>
+          Designed by: <span className="font-semibold">Saikat Barua</span>
         </p>
-      </div>
+        <a className="underline" href="http://saikatbarua.com" target="_blank">
+          https://saikatbarua.com
+        </a>
+      </section>
     </footer>
   );
 }
