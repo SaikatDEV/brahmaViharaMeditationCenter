@@ -15,7 +15,7 @@ function BuddhaBanner() {
         {/* Background Image */}
         <img
           className="absolute inset-0 w-full h-full object-cover object-top"
-          src="/images/all/buddha.jpg"
+          src="/src/assets/images/all/buddha.jpg"
           alt="BUDDHA BANNER IMAGE"
         />
 

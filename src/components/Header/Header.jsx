@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import { FaFacebookF, FaYoutube, FaEnvelope, FaUser } from "react-icons/fa"; // Importing icons
+import logo from "/src/assets/images/all/logo.png";
 
 function Header({ onAdminLogin, isAdminLoggedIn }) {
   const [dropdownVisible, setDropdownVisible] = useState(false);
@@ -22,7 +23,7 @@ function Header({ onAdminLogin, isAdminLoggedIn }) {
 
               <img
                 className="w-16 sm:w-20 mt-1 relative -ml-1 p-2"
-                src="/images/all/logo.png"
+                src={logo}
                 alt="LOGO IMAGE"
               />
             </div>
