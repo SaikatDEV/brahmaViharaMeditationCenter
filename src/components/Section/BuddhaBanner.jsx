@@ -2,12 +2,19 @@ import React, { useEffect } from "react";
 import buddhaPhrase from "../../data/buddhaPhrase.js";
 import Carousel from "react-material-ui-carousel";
 import banner from "/images/buddha.jpg";
+import suttaVideos from "../../data/suttaVideos.js";
 
 function BuddhaBanner() {
   useEffect(() => {
     // Scroll to the top of the page when this component is rendered
     window.scrollTo({ top: 0, behavior: "smooth" });
   }, []);
+
+  // Function to select a random video
+  const getRandomSutta = () => {
+    const randomIndex = Math.floor(Math.random() * suttaVideos.length);
+    return suttaVideos[randomIndex] + "&autoplay=1"; // Add autoplay to the URL
+  };
 
   return (
     <div id="home" className="relative">
@@ -36,7 +43,13 @@ function BuddhaBanner() {
             {/* Button */}
             <div>
               <button className="text-white font-bold text-sm sm:text-lg md:text-xl bg-orange-500 px-6 sm:px-8 md:px-10 py-2 sm:py-3 mt-6 sm:mt-8 md:mt-10 rounded-xl hover:bg-orange-800 transition-all duration-300">
-                Listen Suttas
+                <a
+                  href={getRandomSutta()}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  Listen Suttas
+                </a>
               </button>
             </div>
           </div>

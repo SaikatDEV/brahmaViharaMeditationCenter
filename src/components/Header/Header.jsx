@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import { FaFacebookF, FaYoutube, FaEnvelope, FaUser } from "react-icons/fa"; // Importing icons
 import logo from "/src/assets/images/all/logo.png";
+import NotFound from "../NotFound/NotFound";
 
 function Header({ onAdminLogin, isAdminLoggedIn }) {
   const [dropdownVisible, setDropdownVisible] = useState(false);
@@ -30,8 +31,8 @@ function Header({ onAdminLogin, isAdminLoggedIn }) {
           </Link>
           {/* Social Media Icons */}
           <div className="flex items-center space-x-4 ml-4 text-white">
-            <a
-              href="https://www.facebook.com/groups/316334985782218"
+            {/*<a
+              href="#"
               target="_blank"
               // This below is needed for security purposes
               // while we add any external website
@@ -39,9 +40,10 @@ function Header({ onAdminLogin, isAdminLoggedIn }) {
               className="hover:text-blue-500"
             >
               <FaFacebookF size={25} />
-            </a>
-            <a
-              href="https://www.youtube.com/@VenSaccananda"
+            </a>*/}
+
+            {/*<a
+              href="https://www.youtube.com/watch?v=AlcdKfRLdpg&t=1177s"
               target="_blank"
               // This below is needed for security purposes
               // while we add any external website
@@ -49,9 +51,11 @@ function Header({ onAdminLogin, isAdminLoggedIn }) {
               className="hover:text-red-500"
             >
               <FaYoutube size={25} />
-            </a>
+            </a> */}
+
             <a
-              href="mailto:bvmcnewyork@gmail.com"
+              href="mailto:devsaikat00@gmail.com"
+              target="_blank"
               className="hover:text-orange-500"
             >
               <FaEnvelope size={25} />
