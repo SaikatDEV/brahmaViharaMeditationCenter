@@ -1,6 +1,7 @@
 import React, { useEffect } from "react";
 import buddhaPhrase from "../../data/buddhaPhrase.js";
 import Carousel from "react-material-ui-carousel";
+import banner from "/images/buddha.jpg";
 
 function BuddhaBanner() {
   useEffect(() => {
@@ -15,7 +16,7 @@ function BuddhaBanner() {
         {/* Background Image */}
         <img
           className="absolute inset-0 w-full h-full object-cover object-top"
-          src="/src/assets/images/all/buddha.jpg"
+          src={banner}
           alt="BUDDHA BANNER IMAGE"
         />
 
