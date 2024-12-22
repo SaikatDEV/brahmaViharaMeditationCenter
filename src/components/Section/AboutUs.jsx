@@ -1,4 +1,5 @@
 import React, { useEffect, useState, useRef } from "react";
+import image from "/src/assets/images/all/author.jpg"; // Import the image file
 
 function AboutUs() {
   const [isVisible, setIsVisible] = useState(false);
@@ -98,7 +99,7 @@ function AboutUs() {
       <div className="w-full lg:w-1/2 flex justify-center mt-32 sm:mt-60">
         <img
           className="max-w-[300px] sm:max-w-[400px] lg:max-w-[500px] lg:max-h-[500px] opacity-75 hover:opacity-100 hover:scale-105 transition-all duration-500 rounded-3xl"
-          src="/images/all/author.jpg"
+          src={image}
           alt="AUTHOR IMAGE"
         />
       </div>
