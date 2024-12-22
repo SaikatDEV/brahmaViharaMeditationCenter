@@ -1,7 +1,8 @@
 import React, { useEffect } from "react";
 import buddhaPhrase from "../../data/buddhaPhrase.js";
 import Carousel from "react-material-ui-carousel";
-import banner from "/images/buddha.jpg";
+import banner from "/images/buddha3.jpg";
+import bannerImageData from "../../data/bannerImageData.js";
 
 function BuddhaBanner() {
   useEffect(() => {
@@ -41,15 +42,14 @@ function BuddhaBanner() {
             </div>
             {/* Button */}
             <div>
-              <button className="text-white font-bold text-sm sm:text-lg md:text-xl bg-orange-500 px-6 sm:px-8 md:px-10 py-2 sm:py-3 mt-6 sm:mt-8 md:mt-10 rounded-xl hover:bg-orange-800 transition-all duration-300">
-                <a
-                  href="https://suttareadings.net/audio/"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                >
-                  Listen Suttas
-                </a>
-              </button>
+              <a
+                className="text-white font-bold text-sm sm:text-lg md:text-xl bg-orange-500 px-6 sm:px-8 md:px-10 py-2 sm:py-3 mt-6 sm:mt-8 md:mt-10 rounded-xl hover:bg-orange-800 transition-all duration-300 inline-block text-center"
+                href="https://suttareadings.net/audio/"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                Listen Suttas
+              </a>
             </div>
           </div>
         </div>
@@ -62,7 +62,7 @@ function BuddhaBanner() {
           animation="fade"
           autoPlay={true}
           navButtonsAlwaysInvisible={true}
-          duration={1000}
+          duration={700}
         >
           {buddhaPhrase?.map((each, index) => (
             <div key={index}>{each}</div>
