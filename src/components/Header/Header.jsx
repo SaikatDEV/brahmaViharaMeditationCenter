@@ -191,6 +191,15 @@ function Header({ onAdminLogin, isAdminLoggedIn }) {
             </li>
             <li>
               <Link
+                to="/stories"
+                onClick={() => setDropdownVisible(false)}
+                className="hover:text-orange-500"
+              >
+                Kids Stories
+              </Link>
+            </li>
+            <li>
+              <Link
                 to="/viharas"
                 onClick={() => setDropdownVisible(false)}
                 className="hover:text-orange-500"
