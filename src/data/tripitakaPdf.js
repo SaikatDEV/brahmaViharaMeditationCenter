@@ -25,6 +25,11 @@ const tripitakaPdf = [
     title: "মধ্যম-নিকায় ২",
     url: "/pdf/mn5.pdf",
   },
+  {
+    id: 6,
+    title: "GINGER-THE-GIRAFFE-By-Monkey-Pen",
+    url: "/pdf/GINGER-THE-GIRAFFE-By-Monkey-Pen.pdf",
+  },
 ];
 
 export default tripitakaPdf;
