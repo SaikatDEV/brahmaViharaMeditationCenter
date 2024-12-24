@@ -15,6 +15,11 @@ const storyPdf = [
     title: "James-And-The-Giant-Peach-By-Roald-Dahl",
     url: "/pdf/James-And-The-Giant-Peach-By-Roald-Dahl.pdf",
   },
+  {
+    id: 4,
+    title: "Charlie-And-The-Chocolate-Factory-By-Roald-Dahl",
+    url: "/pdf/Charlie-And-The-Chocolate-Factory-By-Roald-Dahl.pdf",
+  },
 ];
 
 export default storyPdf;
