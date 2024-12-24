@@ -23,58 +23,61 @@ export default function Experience() {
   };
 
   return (
-    <div className="bg-gray-500 py-16 px-4 sm:px-8">
-      <h2 className="mt-12 text-3xl sm:text-4xl font-bold text-center pb-8">
-        The Experience
-      </h2>
+    <div
+      className="relative h-[150vh]"
+      style={{
+        backgroundImage: "url('/public/images/buddha.jpg')",
+        backgroundSize: "cover",
+        backgroundPosition: "center",
+      }}
+    >
+      {/* Sticky Section */}
+      <div className="sticky top-0 z-20">
+        <div className="bg-gray-500 bg-opacity-85 py-20 px-4 sm:px-8">
+          <h2 className="mt-12 text-3xl sm:text-4xl font-bold text-center pb-8 text-white">
+            The Experience
+          </h2>
 
-      {/* Card Container */}
-      <div className="bg-white rounded-lg shadow-lg mx-auto w-full max-w-[90%] sm:max-w-[700px] h-[500px] sm:h-[700px] flex items-center justify-center">
-        {/* Swiper */}
-        <Swiper
-          spaceBetween={30}
-          centeredSlides={true}
-          autoplay={{
-            delay: 2500,
-            disableOnInteraction: false,
-          }}
-          pagination={{
-            clickable: true,
-          }}
-          navigation={true}
-          modules={[Autoplay, Pagination, Navigation]}
-          onAutoplayTimeLeft={onAutoplayTimeLeft}
-          className="w-full h-full rounded-lg overflow-hidden"
-        >
-          {/* Dynamically Render SwiperSlide */}
-          {imageData.map((image) => (
-            <SwiperSlide
-              key={image.id}
-              className="text-center text-lg bg-white flex justify-center items-center"
+          {/* Card Container */}
+          <div className="bg-white rounded-[2rem] shadow-[0_12px_40px_rgba(0,0,0,1)] mx-auto w-full max-w-[90%] sm:max-w-[700px] h-[500px] sm:h-[700px] flex items-center justify-center">
+            {/* Swiper */}
+            <Swiper
+              spaceBetween={30}
+              centeredSlides={true}
+              autoplay={{
+                delay: 2500,
+                disableOnInteraction: false,
+              }}
+              pagination={{
+                clickable: true,
+              }}
+              navigation={true}
+              modules={[Autoplay, Pagination, Navigation]}
+              onAutoplayTimeLeft={onAutoplayTimeLeft}
+              className="w-full h-full rounded-3xl overflow-hidden"
             >
-              <img
-                src={image.src}
-                alt={`Slide ${image.id}`}
-                className="w-full h-full object-cover"
-              />
-            </SwiperSlide>
-          ))}
+              {/* Dynamically Render SwiperSlide */}
+              {imageData.map((image) => (
+                <SwiperSlide
+                  key={image.id}
+                  className="text-center text-lg bg-white flex justify-center items-center"
+                >
+                  <img
+                    src={image.src}
+                    alt={`Slide ${image.id}`}
+                    className="w-full h-full object-cover"
+                  />
+                </SwiperSlide>
+              ))}
 
-          {/* Autoplay Progress */}
-          <div
-            className="absolute right-4 bottom-4 z-10 w-12 h-12 flex items-center justify-center font-bold text-[var(--swiper-theme-color)]"
-            slot="container-end"
-          >
-            <svg
-              viewBox="0 0 48 48"
-              ref={progressCircle}
-              className="absolute left-0 top-0 z-10 w-full h-full stroke-[4px] stroke-[var(--swiper-theme-color)] fill-none transform rotate-[-90deg]"
-            >
-              <circle cx="24" cy="24" r="20"></circle>
-            </svg>
-            <span ref={progressContent}></span>
+              {/* Autoplay Progress - This is hidden*/}
+              <div className="hidden">
+                <svg viewBox="0 0 48 48" ref={progressCircle}></svg>
+                <span ref={progressContent}></span>
+              </div>
+            </Swiper>
           </div>
-        </Swiper>
+        </div>
       </div>
     </div>
   );

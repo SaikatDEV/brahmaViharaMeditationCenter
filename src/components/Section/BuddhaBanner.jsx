@@ -35,7 +35,7 @@ function BuddhaBanner() {
           <div className="flex flex-col items-center">
             {/* Title and Address */}
             <div className="text-center text-white">
-              <h1 className="text-3xl sm:text-5xl md:text-6xl font-bold drop-shadow-md">
+              <h1 className="text-3xl sm:text-5xl md:text-6xl font-bold drop-shadow-2xl">
                 Path to Enlightenment and Wisdom
               </h1>
               <p className="text-xs sm:text-sm md:text-lg mt-4 leading-relaxed"></p>

@@ -18,8 +18,10 @@ function Header({ onAdminLogin, isAdminLoggedIn }) {
         <div className="flex items-center">
           <Link to="/">
             <div>
-              <div className="h-8 w-8 sm:h-10 sm:w-10 border-4 border-red-600 rounded-full absolute top-1 inset-[44px] animate-pulse">
-                <div className="absolute h-6 w-6 sm:h-8 sm:w-8 border-4 border-yellow-400 rounded-full animate-pulse"></div>
+              <div>
+                <div className="h-8 w-8 sm:h-10 sm:w-10 border-4 border-red-600 rounded-full absolute inset-x-6 sm:inset-x-11 animate-pulse">
+                  <div className="absolute h-6 w-6 sm:h-8 sm:w-8 border-4 border-yellow-400 rounded-full animate-pulse"></div>
+                </div>
               </div>
 
               <img

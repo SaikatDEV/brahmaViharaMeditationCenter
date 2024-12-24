@@ -33,7 +33,7 @@ const Tripitaka = () => {
           <iframe
             src={selectedPdf}
             title="PDF Viewer"
-            className="w-full h-[75vh] md:h-full border"
+            className="w-[40vh] sm:w-full h-[50vh] sm:h-[75vh] md:h-full border"
             style={{
               display: "block",
             }}
