@@ -1,16 +1,25 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import pdfs from "../../data/tripitakaPdf";
 
 const Tripitaka = () => {
   // State for selected PDF and error tracking
   // selectedPdf initially will select the 1st one
   const [selectedPdf, setSelectedPdf] = useState(pdfs[0].url);
-  const [hasError, setHasError] = useState(false); //initially no error
+  const [isMobile, setIsMobile] = useState(false);
+
+  // Detect screen size for mobile responsiveness
+  useEffect(() => {
+    const handleResize = () => {
+      setIsMobile(window.innerWidth <= 768); // Mobile if width <= 768px
+    };
+    handleResize();
+    window.addEventListener("resize", handleResize);
+    return () => window.removeEventListener("resize", handleResize);
+  }, []);
 
   // Handle PDF selection
   const handlePdfSelect = (pdfUrl) => {
     setSelectedPdf(pdfUrl);
-    setHasError(false); // Reset error state when a new PDF is selected
   };
 
   return (
@@ -39,21 +48,11 @@ const Tripitaka = () => {
       </div>
 
       {/* PDF Viewer */}
-      <div className="flex-1 p-2 sm:p-4 bg-white overflow-hidden md:overflow-auto flex items-center justify-center">
-        {!hasError ? (
-          <iframe
-            src={selectedPdf}
-            title="PDF Viewer"
-            className="w-[40vh] sm:w-full h-[50vh] sm:h-[75vh] md:h-full border"
-            onError={() => setHasError(true)} // Trigger fallback if error occurs
-            style={{
-              display: hasError ? "none" : "block",
-            }}
-          ></iframe>
-        ) : (
+      <div className="flex-1 p-4 bg-white flex items-center justify-center">
+        {isMobile ? (
           <div className="text-center">
             <p className="text-gray-500 mb-4">
-              PDF could not be displayed. Please download from below:{" "}
+              PDF viewing is not supported on mobile. Download below:
             </p>
             <a
               href={selectedPdf}
@@ -63,6 +62,12 @@ const Tripitaka = () => {
               Download PDF
             </a>
           </div>
+        ) : (
+          <iframe
+            src={selectedPdf}
+            title="PDF Viewer"
+            className="w-[40vh] sm:w-full h-[50vh] sm:h-[75vh] md:h-full border"
+          ></iframe>
         )}
       </div>
     </div>
