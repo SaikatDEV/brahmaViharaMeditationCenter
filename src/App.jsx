@@ -11,6 +11,7 @@ import Footer from "./components/Footer/footer";
 import DonateOnline from "./components/Footer/DonateOnline";
 import AdminLogin from "./components/Header/AdminLogin";
 import CreatePost from "./components/Posts/CreatePost";
+import Stories from "./components/Section/Stories";
 import NotFound from "./components/NotFound/NotFound"; // Optional: For undefined routes
 
 function App() {
@@ -54,6 +55,7 @@ function App() {
           <Route path="/" element={<Home />} />
           <Route path="/about" element={<AboutUs />} />
           <Route path="/tripitaka" element={<Tripitaka />} />
+          <Route path="/stories" element={<Stories />} />
           <Route path="/viharas" element={<Viharas />} />
           <Route path="/donate" element={<DonateOnline />} />
           <Route path="/createpost" element={<CreatePost />} />

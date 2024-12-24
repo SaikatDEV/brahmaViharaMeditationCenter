@@ -117,6 +117,11 @@ function Header({ onAdminLogin, isAdminLoggedIn }) {
               </Link>
             </li>
             <li>
+              <Link to="/stories" className="hover:text-orange-500">
+                Kids Stories
+              </Link>
+            </li>
+            <li>
               <Link to="/viharas" className="hover:text-orange-500">
                 Viharas
               </Link>
