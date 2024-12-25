@@ -1,5 +1,5 @@
 import React, { useEffect, useState, useRef } from "react";
-import image from "/src/assets/images/all/author.jpg"; // Import the image file
+import image from "/src/assets/images/web/author.jpg"; // Import the image file
 
 function AboutUs() {
   const [isVisible, setIsVisible] = useState(false);

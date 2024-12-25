@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import { FaFacebookF, FaYoutube, FaEnvelope, FaUser } from "react-icons/fa"; // Importing icons
-import logo from "/src/assets/images/all/logo.png";
+import logo from "/src/assets/images/web/logo.png";
 import NotFound from "../NotFound/NotFound";
 
 function Header({ onAdminLogin, isAdminLoggedIn }) {
