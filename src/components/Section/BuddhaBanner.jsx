@@ -2,7 +2,6 @@ import React, { useEffect } from "react";
 import buddhaPhrase from "../../data/buddhaPhrase.js";
 import Carousel from "react-material-ui-carousel";
 import banner from "/images/buddha3.jpg";
-import bannerImageData from "../../data/bannerImageData.js";
 
 function BuddhaBanner() {
   useEffect(() => {

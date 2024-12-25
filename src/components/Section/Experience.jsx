@@ -26,7 +26,7 @@ export default function Experience() {
     <div
       className="relative h-[150vh]"
       style={{
-        backgroundImage: "url('/public/images/buddha.jpg')",
+        backgroundImage: "url('/images/buddha.jpg')",
         backgroundSize: "cover",
         backgroundPosition: "center",
       }}
