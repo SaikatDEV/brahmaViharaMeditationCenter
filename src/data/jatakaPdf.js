@@ -2,13 +2,13 @@
 const jatakaPdf = [
   {
     id: crypto.randomUUID(),
-    title: "jataka-tales-volume-1",
-    url: "/pdf/jataka/jataka-tales-volume-1.pdf",
+    title: "Jataka-volume-1",
+    url: "/pdf/jataka/jataka_tv1.pdf",
   },
   {
     id: crypto.randomUUID(),
-    title: "jataka-tales-volume-2",
-    url: "/pdf/jataka/jataka-tales-volume-2.pdf",
+    title: "Jataka-volume-2",
+    url: "/pdf/jataka/jataka_tv2.pdf",
   },
 ];
 
