@@ -1,4 +1,4 @@
-import React, { useRef } from "react";
+import React, { useRef, useState, useEffect } from "react";
 // Import Swiper React components
 import { Swiper, SwiperSlide } from "swiper/react";
 
@@ -16,11 +16,39 @@ import imageData from "/src/data/imageData";
 export default function Experience() {
   const progressCircle = useRef(null);
   const progressContent = useRef(null);
+  const [isVisible, setIsVisible] = useState(false);
+  const titleRef = useRef(null);
 
   const onAutoplayTimeLeft = (s, time, progress) => {
     progressCircle.current.style.setProperty("--progress", 1 - progress);
     progressContent.current.textContent = `${Math.ceil(time / 1000)}s`;
   };
+
+  // To make the animation trigger when the element enters
+  // the viewport, you can use the Intersection Observer API
+  // with React. This allows the titleFadeIn animation to
+  // start only when the heading comes into view.
+
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting) {
+          setIsVisible(true);
+        }
+      },
+      { threshold: 0.5 } // Triggers when 50% of the element is visible
+    );
+
+    if (titleRef.current) {
+      observer.observe(titleRef.current);
+    }
+
+    return () => {
+      if (titleRef.current) {
+        observer.unobserve(titleRef.current);
+      }
+    };
+  }, []);
 
   return (
     <div
@@ -34,7 +62,11 @@ export default function Experience() {
       {/* Sticky Section */}
       <div className="sticky top-0 z-20">
         <div className="bg-gray-500 bg-opacity-85 py-20 px-4 sm:px-8">
-          <h2 className="mt-8 text-2xl sm:text-5xl font-bold text-center pb-8 text-white drop-shadow-[0_6px_8px_rgba(0,0,0,.85)]">
+          <h2
+            ref={titleRef}
+            className={`mt-8 text-2xl sm:text-5xl font-bold text-center pb-8 text-white drop-shadow-[0_6px_8px_rgba(0,0,0,.85)]
+            ${isVisible ? "animate-titleFadeIn" : "opacity-0"}`}
+          >
             The Experience
           </h2>
 
