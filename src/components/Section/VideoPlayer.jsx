@@ -53,11 +53,11 @@ export default function VideoPlayer() {
         {/* Video Player and List Section */}
         <div className="flex flex-col md:flex-row items-center md:items-start justify-center md:space-x-8 p-6">
           {/* Video Player */}
-          <div className="w-full md:w-3/5 bg-white rounded-xl shadow-lg overflow-hidden">
+          <div className="w-full sm:w-2/5 bg-white rounded-xl shadow-lg overflow-hidden">
             <YouTube
               videoId={currentVideo.youtubeId}
               opts={{
-                height: "600",
+                height: "500",
                 width: "100%", // Responsive width
                 playerVars: {
                   autoplay: 0, // Turn off auto-play

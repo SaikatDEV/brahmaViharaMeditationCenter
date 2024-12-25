@@ -11,26 +11,20 @@ export default function Footer() {
           <div>
             <h3 className="text-xl font-bold text-white mb-4">RESOURCES</h3>
             <ul>
-              <li className="mb-2 hover:text-gray-100">
-                <a href="#">Learn Buddhism</a>
+              <li className="pb-2  hover:text-orange-400">
+                <Link to="/articles">Articles</Link>
               </li>
-              <li className="mb-2 hover:text-gray-100">
-                <a href="#">Practice Meditation</a>
+              <li className="pb-2  hover:text-orange-400">
+                <Link to="/tripitaka">Buddhist Scriptures</Link>
               </li>
-              <li>
-                <Link to="/buddhism" className="mb-2 hover:text-gray-100">
-                  Dhamma Articles
-                </Link>
+              <li className="pb-2  hover:text-orange-400">
+                <Link to="/meditationTechniques">Meditation Techniques</Link>
               </li>
-              <li>
-                <Link to="/tripitaka" className="mb-2 hover:text-gray-100">
-                  Buddhist Scriptures
-                </Link>
+              <li className="pb-2  hover:text-orange-400">
+                <Link to="/jataka">Jataka Tales</Link>
               </li>
-              <li>
-                <Link to="/stories" className="mb-2 hover:text-gray-100">
-                  Kids Stories
-                </Link>
+              <li className="pb-2  hover:text-orange-400">
+                <Link to="/stories">Kids Stories</Link>
               </li>
             </ul>
           </div>
@@ -76,16 +70,14 @@ export default function Footer() {
           {/* Copyright Section */}
           <div className="lg:col-span-1 sm:col-span-2 text-center lg:text-left">
             <h3 className="text-xl font-bold text-white mb-4">COPYRIGHT</h3>
-            <p className="text-gray-400">
-              © 1999 - 2024 Brahma Vihara Meditation Center
-            </p>
+            <p className="text-gray-400">© 2008 - Buddhist Campus</p>
             <p className="text-gray-400">All Rights Reserved</p>
           </div>
         </div>
       </section>
 
       {/* Bottom Section */}
-      <section className="text-white mt-8 bg-slate-600 flex flex-col sm:flex-row items-center justify-center sm:justify-between space-y-4 sm:space-y-0 py-4 px-6 sm:px-10">
+      <section className="text-white mt-8 bg-slate-600 flex flex-col sm:flex-row items-center justify-center sm:justify-between space-y-4 sm:space-y-0 py-4 px-6 sm:px-16">
         <p className="text-sm text-center sm:text-left">
           Designed by: <span className="font-semibold">Saikat Barua</span>
         </p>

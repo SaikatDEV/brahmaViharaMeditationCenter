@@ -1,29 +1,29 @@
 // Mock data for PDFs
 const tripitakaPdf = [
   {
-    id: 1,
+    id: crypto.randomUUID(),
     title: "দীর্ঘ নিকায় ১",
-    url: "/pdf/dn1.pdf",
+    url: "/pdf/tripitaka/dn1.pdf",
   },
   {
-    id: 2,
+    id: crypto.randomUUID(),
     title: "দীর্ঘ নিকায় ২",
-    url: "/pdf/dn2.pdf",
+    url: "/pdf/tripitaka/dn2.pdf",
   },
   {
-    id: 3,
+    id: crypto.randomUUID(),
     title: "দীর্ঘ নিকায় ৩",
-    url: "/pdf/dn3.pdf",
+    url: "/pdf/tripitaka/dn3.pdf",
   },
   {
-    id: 4,
+    id: crypto.randomUUID(),
     title: "মধ্যম নিকায় ১",
-    url: "/pdf/mn4.pdf",
+    url: "/pdf/tripitaka/mn4.pdf",
   },
   {
-    id: 5,
+    id: crypto.randomUUID(),
     title: "মধ্যম-নিকায় ২",
-    url: "/pdf/mn5.pdf",
+    url: "/pdf/tripitaka/mn5.pdf",
   },
 ];
 

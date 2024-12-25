@@ -9,6 +9,9 @@ const Tripitaka = () => {
 
   // Detect screen size for mobile responsiveness
   useEffect(() => {
+    // Scroll to the top of the page when this component is rendered
+    window.scrollTo({ top: 0, behavior: "smooth" });
+
     const handleResize = () => {
       setIsMobile(window.innerWidth <= 768); // Mobile if width <= 768px
     };
@@ -29,7 +32,7 @@ const Tripitaka = () => {
         <h2 className="text-lg font-bold mb-4">Tripitaka Index</h2>
         <ul className="space-y-2">
           {/* Displaying the title  */}
-          {pdfs.map((pdf) => (
+          {pdfs.map((pdf, index) => (
             <li
               key={pdf.id}
               className={`p-2 cursor-pointer rounded ${
@@ -41,7 +44,7 @@ const Tripitaka = () => {
               // and display the selected pdf
               onClick={() => handlePdfSelect(pdf.url)}
             >
-              {pdf.title}
+              {`${index + 1}. ${pdf.title}`}
             </li>
           ))}
         </ul>

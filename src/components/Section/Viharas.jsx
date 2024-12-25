@@ -69,7 +69,7 @@ const Viharas = () => {
               }`}
               onClick={() => setSelectedVihara(vihara)}
             >
-              {`${index + 1} ➡ ${vihara.name}`}
+              {`${index + 1}. ${vihara.name}`}
             </li>
           ))}
         </ul>
