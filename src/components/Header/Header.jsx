@@ -103,7 +103,7 @@ function Header({ onAdminLogin, isAdminLoggedIn }) {
 
             <li>
               <Link to="/about" className="hover:text-orange-500">
-                About Us
+                About us
               </Link>
             </li>
             <li>
@@ -116,11 +116,7 @@ function Header({ onAdminLogin, isAdminLoggedIn }) {
                 Tripitaka
               </Link>
             </li>
-            <li>
-              <Link to="/stories" className="hover:text-orange-500">
-                Kids Stories
-              </Link>
-            </li>
+
             <li>
               <Link to="/viharas" className="hover:text-orange-500">
                 Viharas

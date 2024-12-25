@@ -34,7 +34,7 @@ export default function Experience() {
       {/* Sticky Section */}
       <div className="sticky top-0 z-20">
         <div className="bg-gray-500 bg-opacity-85 py-20 px-4 sm:px-8">
-          <h2 className="mt-12 text-3xl sm:text-4xl font-bold text-center pb-8 text-white">
+          <h2 className="mt-8 text-2xl sm:text-5xl font-bold text-center pb-8 text-white drop-shadow-[0_6px_8px_rgba(0,0,0,.85)]">
             The Experience
           </h2>
 

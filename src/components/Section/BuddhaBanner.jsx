@@ -34,7 +34,7 @@ function BuddhaBanner() {
           <div className="flex flex-col items-center">
             {/* Title and Address */}
             <div className="text-center text-white">
-              <h1 className="text-3xl sm:text-5xl md:text-6xl font-bold drop-shadow-2xl">
+              <h1 className="text-3xl sm:text-5xl md:text-6xl font-bold drop-shadow-[0_6px_8px_rgba(0,0,0,.85)]">
                 Path to Enlightenment and Wisdom
               </h1>
               <p className="text-xs sm:text-sm md:text-lg mt-4 leading-relaxed"></p>
@@ -55,7 +55,7 @@ function BuddhaBanner() {
       </div>
 
       {/* Quote Section */}
-      <div className="bg-orange-800 text-white text-center py-8 sm:py-8 text-sm sm:text-xl md:text-3xl font-extralight px-4">
+      <div className="bg-slate-700 text-white text-center py-8 sm:py-8 text-sm sm:text-xl md:text-3xl font-extralight px-4">
         <Carousel
           indicators={false}
           animation="fade"

@@ -9,6 +9,9 @@ const Stories = () => {
 
   // Detect screen size for mobile responsiveness
   useEffect(() => {
+    // Scroll to the top of the page when this component is rendered
+    window.scrollTo({ top: 0, behavior: "smooth" });
+
     const handleResize = () => {
       setIsMobile(window.innerWidth <= 768); // Mobile if width <= 768px
     };
