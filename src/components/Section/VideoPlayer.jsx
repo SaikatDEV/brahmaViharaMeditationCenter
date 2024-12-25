@@ -26,7 +26,7 @@ export default function VideoPlayer() {
       }}
     >
       <div className=" bg-gray-500 bg-opacity-85 min-h-[900px] h-[100%]">
-        <div className="py-8 h-[18%] w-[100%] bg-slate-700 mb-8 ">
+        <div className="pt-12 pb-8 h-[18%] w-[100%] bg-slate-700 flex flex-col justify-center items-center">
           <h2 className="text-5xl font-bold text-center text-white pb-4 drop-shadow-[0_6px_8px_rgba(0,0,0,.85)]">
             Watch Videos
           </h2>
@@ -49,9 +49,9 @@ export default function VideoPlayer() {
           </div>
         </div>
 
-        <div className="flex items-center justify-center flex-col md:flex-row md:space-x-8">
+        <div className="sm:pt-10 flex items-start justify-center flex-col md:flex-row md:space-x-8">
           {/* Video Player */}
-          <div className="mb-6 md:mb-0 p-6 rounded-lg overflow-hidden flex items-center justify-center shadow-md bg-white">
+          <div className="mb-6  p-6 rounded-lg overflow-hidden flex items-center justify-center shadow-md bg-white">
             <YouTube
               videoId={currentVideo.youtubeId}
               opts={{
