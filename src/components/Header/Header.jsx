@@ -185,15 +185,7 @@ function Header({ onAdminLogin, isAdminLoggedIn }) {
                 Tripitaka
               </Link>
             </li>
-            <li>
-              <Link
-                to="/stories"
-                onClick={() => setDropdownVisible(false)}
-                className="hover:text-orange-500"
-              >
-                Kids Stories
-              </Link>
-            </li>
+
             <li>
               <Link
                 to="/viharas"

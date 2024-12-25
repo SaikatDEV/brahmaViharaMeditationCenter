@@ -52,7 +52,7 @@ export default function Experience() {
 
   return (
     <div
-      className="relative h-[150vh]"
+      className="relative sm:h-[150vh]"
       style={{
         backgroundImage: "url('/images/buddha.jpg')",
         backgroundSize: "cover",
@@ -64,7 +64,7 @@ export default function Experience() {
         <div className="bg-gray-500 bg-opacity-85 py-20 px-4 sm:px-8">
           <h2
             ref={titleRef}
-            className={`mt-2 text-2xl sm:text-6xl font-bold text-center pb-20 text-white drop-shadow-[0_6px_8px_rgba(0,0,0,.85)]
+            className={`mt-2 text-2xl sm:text-5xl font-bold text-center pb-20 text-white drop-shadow-[0_6px_8px_rgba(0,0,0,.85)]
             ${isVisible ? "animate-titleFadeIn2" : "opacity-0"}`}
           >
             The Experience

@@ -6,7 +6,7 @@ export default function Footer() {
     <footer className="bg-gray-800 text-gray-300 pt-6">
       <section className="container mx-auto px-6 lg:px-20">
         {/* Grid Container */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
           {/* Resources Section */}
           <div>
             <h3 className="text-xl font-bold text-white mb-4">RESOURCES</h3>
@@ -17,11 +17,15 @@ export default function Footer() {
               <li className="mb-2 hover:text-gray-100">
                 <a href="#">Practice Meditation</a>
               </li>
-              <li className="mb-2 hover:text-gray-100">
-                <a href="#">Dhamma Articles</a>
+              <li>
+                <Link to="/buddhism" className="mb-2 hover:text-gray-100">
+                  Dhamma Articles
+                </Link>
               </li>
-              <li className="mb-2 hover:text-gray-100">
-                <a href="#">Buddhist Scriptures</a>
+              <li>
+                <Link to="/tripitaka" className="mb-2 hover:text-gray-100">
+                  Buddhist Scriptures
+                </Link>
               </li>
               <li>
                 <Link to="/stories" className="mb-2 hover:text-gray-100">
@@ -70,7 +74,7 @@ export default function Footer() {
           </div>
 
           {/* Copyright Section */}
-          <div className="lg:col-span-1">
+          <div className="lg:col-span-1 sm:col-span-2 text-center lg:text-left">
             <h3 className="text-xl font-bold text-white mb-4">COPYRIGHT</h3>
             <p className="text-gray-400">
               © 1999 - 2024 Brahma Vihara Meditation Center
@@ -79,11 +83,18 @@ export default function Footer() {
           </div>
         </div>
       </section>
-      <section className=" text-white mt-8 bg-slate-600 flex items-center justify-end space-x-10 py-2 pr-10">
-        <p className="text-sm">
+
+      {/* Bottom Section */}
+      <section className="text-white mt-8 bg-slate-600 flex flex-col sm:flex-row items-center justify-center sm:justify-between space-y-4 sm:space-y-0 py-4 px-6 sm:px-10">
+        <p className="text-sm text-center sm:text-left">
           Designed by: <span className="font-semibold">Saikat Barua</span>
         </p>
-        <a className="underline" href="http://saikatbarua.com" target="_blank">
+        <a
+          className="underline text-sm text-center sm:text-right"
+          href="http://saikatbarua.com"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
           https://saikatbarua.com
         </a>
       </section>

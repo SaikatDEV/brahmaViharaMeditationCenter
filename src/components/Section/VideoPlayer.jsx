@@ -18,26 +18,27 @@ export default function VideoPlayer() {
 
   return (
     <div
-      className="relative h-[100vh]"
+      className="relative min-h-screen"
       style={{
         backgroundImage: "url('/images/buddha2.jpg')",
         backgroundSize: "cover",
         backgroundPosition: "center",
       }}
     >
-      <div className=" bg-gray-500 bg-opacity-85 min-h-[900px] h-[100%]">
-        <div className="pt-12 pb-8 h-[18%] w-[100%] bg-slate-700 flex flex-col justify-center items-center">
-          <h2 className="text-5xl font-bold text-center text-white pb-4 drop-shadow-[0_6px_8px_rgba(0,0,0,.85)]">
+      <div className="bg-gray-500 bg-opacity-85 min-h-[100vh] flex flex-col justify-between">
+        {/* Title Section */}
+        <div className="pt-12 pb-8 bg-slate-700 flex flex-col justify-center items-center">
+          <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-center text-white pb-4 drop-shadow-[0_6px_8px_rgba(0,0,0,.85)]">
             Watch Videos
           </h2>
 
           {/* Video Groups Selector */}
-          <div className="flex justify-center mb-8">
+          <div className="flex flex-wrap justify-center mt-4">
             {videoGroups.map((group) => (
               <button
                 key={group.id}
                 onClick={() => handleGroupChange(group.id)}
-                className={`px-4 py-2 mx-2 rounded-lg shadow-sm transition-all duration-300 ${
+                className={`px-4 py-2 m-2 rounded-lg shadow-sm transition-all duration-300 ${
                   selectedGroup.id === group.id
                     ? "bg-blue-600 text-white font-semibold"
                     : "bg-gray-200 hover:bg-gray-300"
@@ -49,25 +50,26 @@ export default function VideoPlayer() {
           </div>
         </div>
 
-        <div className="sm:pt-10 flex items-start justify-center flex-col md:flex-row md:space-x-8">
+        {/* Video Player and List Section */}
+        <div className="flex flex-col md:flex-row items-center md:items-start justify-center md:space-x-8 p-6">
           {/* Video Player */}
-          <div className="mb-6  p-6 rounded-lg overflow-hidden flex items-center justify-center shadow-md bg-white">
+          <div className="w-full md:w-3/5 bg-white rounded-xl shadow-lg overflow-hidden">
             <YouTube
               videoId={currentVideo.youtubeId}
               opts={{
-                height: "390",
-                width: "640",
+                height: "600",
+                width: "100%", // Responsive width
                 playerVars: {
                   autoplay: 0, // Turn off auto-play
                   controls: 1, // Show player controls
                 },
               }}
-              className="mx-auto"
+              className="w-full aspect-video" // Maintains aspect ratio for responsiveness
             />
           </div>
 
           {/* Video List */}
-          <div className="bg-white p-6 rounded-lg shadow-md max-w-[400px] w-full">
+          <div className="bg-white p-6 rounded-lg shadow-lg w-full max-w-md mt-6 md:mt-0">
             <h3 className="text-lg font-semibold mb-4 text-gray-800">
               {selectedGroup.name}
             </h3>
