@@ -13,6 +13,8 @@ import AdminLogin from "./components/Header/AdminLogin";
 import CreatePost from "./components/Posts/CreatePost";
 import Stories from "./components/Section/Stories";
 import Jataka from "./components/Section/Jataka";
+import Buddhism from "./components/Section/Buddhism";
+import MeditationTechniques from "./components/Section/MeditationTechniques";
 import NotFound from "./components/NotFound/NotFound"; // Optional: For undefined routes
 
 function App() {
@@ -59,7 +61,12 @@ function App() {
           <Route path="/jataka" element={<Jataka />} />
           <Route path="/stories" element={<Stories />} />
           <Route path="/viharas" element={<Viharas />} />
+          <Route path="/buddhism" element={<Buddhism />} />
           <Route path="/donate" element={<DonateOnline />} />
+          <Route
+            path="/meditationTechniques"
+            element={<MeditationTechniques />}
+          />
           <Route path="/createpost" element={<CreatePost />} />
           {/* Optional: 404 Not Found Page */}
           <Route path="*" element={<NotFound />} />

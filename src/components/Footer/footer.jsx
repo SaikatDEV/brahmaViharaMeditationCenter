@@ -24,7 +24,7 @@ export default function Footer() {
                 <Link to="/jataka">Jataka Tales</Link>
               </li>
               <li className="pb-2  hover:text-orange-400">
-                <Link to="/stories">Kids Stories</Link>
+                <Link to="/stories">Stories for Kids</Link>
               </li>
             </ul>
           </div>
