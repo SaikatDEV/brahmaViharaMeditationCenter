@@ -9,22 +9,10 @@ export default function Footer() {
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
           {/* Resources Section */}
           <div>
-            <h3 className="text-xl font-bold text-white mb-4">RESOURCES</h3>
+            <h3 className="text-xl font-bold text-white mb-4">OTHERS</h3>
             <ul>
               <li className="pb-2  hover:text-orange-400">
                 <Link to="/articles">Articles</Link>
-              </li>
-              <li className="pb-2  hover:text-orange-400">
-                <Link to="/tripitaka">Buddhist Scriptures</Link>
-              </li>
-              <li className="pb-2  hover:text-orange-400">
-                <Link to="/meditationTechniques">Meditation Techniques</Link>
-              </li>
-              <li className="pb-2  hover:text-orange-400">
-                <Link to="/jataka">Jataka Tales</Link>
-              </li>
-              <li className="pb-2  hover:text-orange-400">
-                <Link to="/stories">Stories for Kids</Link>
               </li>
             </ul>
           </div>
