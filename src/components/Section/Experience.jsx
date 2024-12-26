@@ -61,7 +61,7 @@ export default function Experience() {
     >
       {/* Sticky Section */}
       <div className="sticky top-0 z-20">
-        <div className="bg-gray-500 bg-opacity-85 py-1 sm:py-4 px-4 sm:px-8">
+        <div className="bg-gray-500 bg-opacity-85 py-20 px-4 sm:px-8">
           <h2
             ref={titleRef}
             className={`mt-2 text-2xl sm:text-5xl font-bold text-center pb-20 text-white drop-shadow-[0_6px_8px_rgba(0,0,0,.85)]
