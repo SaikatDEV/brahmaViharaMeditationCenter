@@ -33,13 +33,12 @@ function Header({ onAdminLogin, isAdminLoggedIn }) {
           <Link to="/">
             {/** Added Buddha Wisdom Circle with below */}
             <div>
-              <div className="h-8 w-8 sm:h-10 sm:w-10 border-4 border-red-600 rounded-full absolute inset-x-6 sm:inset-x-11 animate-pulse">
-                <div className="absolute h-6 w-6 sm:h-8 sm:w-8 border-4 border-yellow-400 rounded-full animate-pulse"></div>
-              </div>
+              <div className="absolute h-5 w-5 sm:h-8 sm:w-8 border-4 inset-x-[31px] inset-y-[20px] sm:inset-x-[48px] sm:inset-y-[8px] border-red-600 rounded-full  animate-pulse"></div>
+              <div className="absolute h-3 w-3 sm:h-6 sm:w-6 border-4 inset-x-[34.5px] inset-y-[24px] sm:inset-x-[52px] sm:inset-y-[12px] border-yellow-400 rounded-full animate-pulse"></div>
             </div>
             {/** Added Buddha logo */}
             <img
-              className="w-16 sm:w-20 mt-1 relative -ml-1 p-2"
+              className="w-16 sm:w-20 mt-1 relative -ml-1 p-4"
               src={logo}
               alt="LOGO IMAGE"
             />

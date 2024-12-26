@@ -55,7 +55,7 @@ function BuddhaBanner() {
       </div>
 
       {/* Quote Section */}
-      <div className="bg-slate-700 text-white text-center py-8 sm:py-8 text-sm sm:text-xl md:text-3xl font-extralight px-4">
+      <div className="bg-slate-700 text-white text-center text-sm sm:text-xl md:text-3xl font-extralight px-4 py-4 sm:py-6 min-h-20 sm:min-h-32">
         <Carousel
           indicators={false}
           animation="fade"
