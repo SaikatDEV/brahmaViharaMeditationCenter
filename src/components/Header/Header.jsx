@@ -31,6 +31,13 @@ function Header({ onAdminLogin, isAdminLoggedIn }) {
         {/* Logo Section */}
         <div className="flex items-center" onClick={closeDropdowns}>
           <Link to="/">
+            {/** Added Buddha Wisdom Circle with below */}
+            <div>
+              <div className="h-8 w-8 sm:h-10 sm:w-10 border-4 border-red-600 rounded-full absolute inset-x-6 sm:inset-x-11 animate-pulse">
+                <div className="absolute h-6 w-6 sm:h-8 sm:w-8 border-4 border-yellow-400 rounded-full animate-pulse"></div>
+              </div>
+            </div>
+            {/** Added Buddha logo */}
             <img
               className="w-16 sm:w-20 mt-1 relative -ml-1 p-2"
               src={logo}
@@ -130,7 +137,7 @@ function Header({ onAdminLogin, isAdminLoggedIn }) {
                   <li>
                     <Link
                       to="/tripitaka"
-                      className="block px-4 py-1.5 hover:bg-gray-100"
+                      className="block px-4 py-1.5 hover:bg-gray-100 hover:text-orange-500"
                       onClick={closeDropdowns}
                     >
                       Tripitaka
@@ -139,7 +146,7 @@ function Header({ onAdminLogin, isAdminLoggedIn }) {
                   <li>
                     <Link
                       to="/meditationTechniques"
-                      className="block px-4 py-1.5 hover:bg-gray-100"
+                      className="block px-4 py-1.5 hover:bg-gray-100 hover:text-orange-500"
                       onClick={closeDropdowns}
                     >
                       Meditation Techniques
@@ -148,7 +155,7 @@ function Header({ onAdminLogin, isAdminLoggedIn }) {
                   <li>
                     <Link
                       to="/jataka"
-                      className="block px-4 py-1.5 hover:bg-gray-100"
+                      className="block px-4 py-1.5 hover:bg-gray-100 hover:text-orange-500"
                       onClick={closeDropdowns}
                     >
                       Jataka Tales
@@ -157,20 +164,22 @@ function Header({ onAdminLogin, isAdminLoggedIn }) {
                   <li>
                     <Link
                       to="/stories"
-                      className="block px-4 py-1.5 hover:bg-gray-100"
+                      className="block px-4 py-1.5 hover:bg-gray-100 hover:text-orange-500"
                       onClick={closeDropdowns}
                     >
                       Stories for Kids
                     </Link>
                   </li>
+                  <li>
+                    <Link
+                      to="/viharas"
+                      className="block px-4 py-1.5 hover:bg-gray-100 hover:text-orange-500"
+                    >
+                      Viharas
+                    </Link>
+                  </li>
                 </ul>
               )}
-            </li>
-
-            <li>
-              <Link to="/viharas" className="hover:text-orange-500">
-                Viharas
-              </Link>
             </li>
 
             {isAdminLoggedIn && (
@@ -200,8 +209,14 @@ function Header({ onAdminLogin, isAdminLoggedIn }) {
         <div className="sm:hidden absolute top-20 left-0 w-full bg-white shadow-md">
           <ul className="flex flex-col items-center space-y-4 py-4 font-semibold text-lg text-gray-800">
             <li>
-              <Link to="/" onClick={() => setDropdownVisible(false)}>
+              <Link to="/" onClick={closeDropdowns}>
                 Home
+              </Link>
+            </li>
+
+            <li>
+              <Link to="/about" onClick={closeDropdowns}>
+                About us
               </Link>
             </li>
 
@@ -210,18 +225,29 @@ function Header({ onAdminLogin, isAdminLoggedIn }) {
               {buddhismDropdown && (
                 <ul className="space-y-2 mt-2 text-sm">
                   <li>
-                    <Link to="/tripitaka">Tripitaka</Link>
+                    <Link to="/tripitaka" onClick={closeDropdowns}>
+                      Tripitaka
+                    </Link>
                   </li>
                   <li>
-                    <Link to="/meditationTechniques">
+                    <Link to="/meditationTechniques" onClick={closeDropdowns}>
                       Meditation Techniques
                     </Link>
                   </li>
                   <li>
-                    <Link to="/jataka">Jataka Tales</Link>
+                    <Link to="/jataka" onClick={closeDropdowns}>
+                      Jataka Tales
+                    </Link>
                   </li>
                   <li>
-                    <Link to="/stories">Stories for kids</Link>
+                    <Link to="/stories" onClick={closeDropdowns}>
+                      Stories for kids
+                    </Link>
+                  </li>
+                  <li>
+                    <Link to="/viharas" onClick={closeDropdowns}>
+                      Viharas
+                    </Link>
                   </li>
                 </ul>
               )}
