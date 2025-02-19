@@ -1,14 +1,16 @@
 import React, { useState } from "react";
+import Slide from "@mui/material/Slide";
+import Paper from "@mui/material/Paper";
 import viharasBd from "../../data/viharaListBd";
 import viharasUsa from "../../data/viharaListUsa";
 
 const Viharas = () => {
   // State for selected country
   const [selectedCountry, setSelectedCountry] = useState("USA");
-
   // State for filtered viharas and selected vihara
   const [filteredViharas, setFilteredViharas] = useState(viharasUsa);
   const [selectedVihara, setSelectedVihara] = useState(viharasUsa[0]);
+  const [sliderOpen, setSliderOpen] = useState(false);
 
   // Handle country toggle
   const handleToggle = (country) => {
@@ -23,13 +25,23 @@ const Viharas = () => {
 
     setFilteredViharas(sortedViharas);
     // Automatically select the first vihara
-    setSelectedVihara(sortedViharas[0]);
+    handleClickEachVihara(sortedViharas[0]);
+  };
+
+  const handleClickEachVihara = (vihara) => {
+    // Automatically select the first vihara
+    setSelectedVihara(vihara);
+    setSliderOpen(!sliderOpen);
+  };
+
+  const handleCloseSlider = () => {
+    setSliderOpen(false);
   };
 
   return (
     <div className="flex flex-col md:flex-row h-screen pt-20">
       {/* Left Sidebar */}
-      <div className="w-full md:w-1/4 bg-gray-200 p-4 overflow-y-auto shadow-lg">
+      <div className="w-full sm:w-1/4 bg-gray-200 p-4 overflow-y-auto shadow-lg">
         {/* Toggle Buttons */}
         <div className="flex justify-center space-x-4 mb-6">
           <button
@@ -67,7 +79,7 @@ const Viharas = () => {
                   ? "bg-blue-500 text-white"
                   : "hover:bg-gray-300"
               }`}
-              onClick={() => setSelectedVihara(vihara)}
+              onClick={() => handleClickEachVihara(vihara)}
             >
               {`${index + 1}. ${vihara.name}`}
             </li>
@@ -75,11 +87,20 @@ const Viharas = () => {
         </ul>
       </div>
 
-      {/* Main Content */}
-      <div className="flex-1 p-4 bg-white">
-        {selectedVihara ? (
-          <div className="space-y-4">
-            {/* Address Section */}
+      {/* Slide-Out Panel for Vihara Details */}
+      <Slide
+        direction="up"
+        in={sliderOpen}
+        mountOnEnter
+        unmountOnExit
+        className="absolute top-40 sm:w-1/4 sm:h-auto"
+      >
+        <Paper
+          elevation={6}
+          className="w-[300px] sm:w-[400px] h-[80vh] p-6 text-center rounded-lg bg-white shadow-2xl"
+        >
+          {/* Address Section */}
+          <div className="p-4 mt-6 flex flex-col flex-1 justify-between ">
             <div>
               <a
                 href={selectedVihara.website}
@@ -92,6 +113,33 @@ const Viharas = () => {
               <p className="text-gray-700">{selectedVihara.address}</p>
             </div>
 
+            {console.log(selectedVihara.mapSrc)}
+            <div className="pt-10">
+              <iframe
+                src={selectedVihara.mapSrc}
+                width="100%"
+                height="250"
+                style={{ border: 0 }}
+                allowFullScreen
+                loading="lazy"
+                referrerPolicy="no-referrer-when-downgrade"
+              />
+
+              <button
+                onClick={handleCloseSlider}
+                className="mt-6 bg-red-500 text-white px-4 py-2 rounded hover:bg-red-700"
+              >
+                Close
+              </button>
+            </div>
+          </div>
+        </Paper>
+      </Slide>
+
+      {/* Main Content */}
+      <div className="flex-1 p-4 bg-white">
+        {selectedVihara ? (
+          <div className="space-y-4">
             {/* Enlarged Website Section */}
             <div className="flex justify-center">
               <a
